@@ -1,0 +1,66 @@
+<!-- payment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment - Travel Mate</title>
+    <style>
+        
+        body {
+            height: 100vh;
+            width: 100%;
+            background-image: url('https://media.istockphoto.com/id/486836087/photo/business-travel.jpg?s=612x612&w=0&k=20&c=B2jcARGGKEQBsc4sl9unuKd9FlkjUkl3jD6MsXYH5Ac=');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .payment-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            background: green;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+   <script>
+    function showSuccessMessage(event) {
+        event.preventDefault(); // Prevent form from submitting immediately
+        alert('Payment Successful! Thank you for booking with Travel Mate.');
+        // After alert, you can manually redirect to home.html
+        window.location.href = 'home.html';
+    }
+</script>
+</head>
+<body>
+<div class="payment-box">
+    <h2>Payment Details</h2>
+    <form onsubmit="showSuccessMessage(event)">
+        <input type="text" name="cardholder" placeholder="Cardholder Name" required><br>
+        <input type="number" name="cardnumber" placeholder="Card Number" required><br>
+        <input type="number" name="expirymonth" placeholder="Expiry Month (MM)" required><br>
+        <input type="number" name="expiryyear" placeholder="Expiry Year (YY)" required><br>
+        <input type="number" name="cvv" placeholder="CVV" required><br>
+        <input type="submit" value="Pay Now">
+    </form>
+</div>
+</body>
+</html>
